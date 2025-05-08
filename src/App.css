@@ -128,6 +128,10 @@ p{
   display: none;
 }
 
+.width-512px{
+  width: 512px;
+}
+
 @keyframes hideNav {
   from { display: block;}
   to {opacity: 0;}

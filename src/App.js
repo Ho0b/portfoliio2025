@@ -8,12 +8,28 @@ const sections =
   {title: "Contact", id: 3},
 ];
 
-var showNav = (window.scrollY < 250) ? "hidden" : "show"
+function IntroSection(){
+  return(
+    <div>
+      <h2>
+        Hello, I'm Netra Hun
+      </h2>
+      <img src=''>
+      </img>
+      <p className='width-512px'>
+        I am a programming and design undergraduate, 
+        I focus on UI and UX development and 
+        have created a lot of creative projects.
+        Ranging from games, logos, videos, music and short films and animations.
+      </p>
+    </div>
+  )
+}
 
 function IntroCard(){
   return(
     <section id='introCard'>
-
+      <IntroSection />
     </section>
   )
 }
@@ -23,7 +39,7 @@ function Navi(){
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < 250) {
+      if (window.scrollY < 100) {
         setShowNav("hidden");
       } else {
         setShowNav("show");
@@ -55,19 +71,18 @@ function Navi(){
   )
 }
 
-function Mainsection(){
-
-  const numberOfSections = sections.map(title =>
-    <section key={title.id}>
-      <p>
-        this is the {String(title.title)} section
-      </p>
+function Gallery(){
+  return(
+    <section>
+      
     </section>
   )
+}
 
+function Mainsection(){
   return (
     <main>
-      {numberOfSections}
+      
     </main>
   )
 }
