@@ -16,11 +16,11 @@ function IntroSection(){
       </h2>
       <img src=''>
       </img>
-      <p className='width-512px'>
-        I am a programming and design undergraduate, 
-        I focus on UI and UX development and 
-        have created a lot of creative projects.
-        Ranging from games, logos, videos, music and short films and animations.
+      <p className='width-fit'>
+        I am a programming and design undergraduate, and 
+        my consentration is UI and UX development. I've created a lot of creative projects over the years.
+        Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
+        3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
       </p>
     </div>
   )
@@ -35,14 +35,14 @@ function IntroCard(){
 }
 
 function Navi(){
-  const [showNav, setShowNav] = useState("hidden");
+  const [showNav, setShowNav] = useState("hiddenNav");
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 100) {
-        setShowNav("hidden");
+        setShowNav("hiddenNav");
       } else {
-        setShowNav("show");
+        setShowNav("showNav");
       }
     };
 
@@ -61,8 +61,8 @@ function Navi(){
 
       <ul>
         <li>
-          <a href='about.html'>
-            About
+          <a href='mailto:business.netrahun@gmail.com' >
+            Contact
           </a>
         </li>
       </ul>
@@ -82,7 +82,7 @@ function Gallery(){
 function Mainsection(){
   return (
     <main>
-      
+      <Gallery />
     </main>
   )
 }
