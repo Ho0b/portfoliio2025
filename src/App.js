@@ -1,12 +1,12 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 
-const sections = 
-[
-  {title: "Gallery", id: 1},
-  {title: "Contact", id: 3},
-];
+// const sections = 
+// [
+//   {title: "Gallery", id: 1},
+//   {title: "Contact", id: 3},
+// ];
 
 function IntroSection(){
   return(
@@ -14,7 +14,7 @@ function IntroSection(){
       <h2>
         Hello, I'm Netra Hun
       </h2>
-      <img src=''>
+      <img src={logo} alt='Hero Icon'>
       </img>
       <p className='width-fit'>
         I am a programming and design undergraduate, and 
@@ -22,6 +22,7 @@ function IntroSection(){
         Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
         3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
       </p>
+      <a href='about.html'>More About Me!</a>
     </div>
   )
 }
@@ -57,7 +58,9 @@ function Navi(){
 
   return(
     <nav className={showNav}>
-      <h1>Netra Hun</h1>
+      <h1>
+        <a href='index.html'>Netra Hun</a>
+      </h1>
 
       <ul>
         <li>

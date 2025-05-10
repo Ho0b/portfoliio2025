@@ -78,6 +78,10 @@ nav > ul{
   padding: 0;
   /* gap: 50px; */
 }
+a{
+  text-decoration: none;
+  
+}
 ul li {
   text-decoration: none;
   list-style: none;
