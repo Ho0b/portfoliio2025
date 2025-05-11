@@ -1,4 +1,4 @@
-import logo from './nh.svg';
+import logo from './assets/images/nh.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 //   {title: "Gallery", id: 1},
 //   {title: "Contact", id: 3},
 // ];
+
 
 function IntroSection(){
   return(
@@ -74,8 +75,9 @@ function Navi(){
 }
 
 function Gallery(){
+
   return(
-    <section>
+    <section id='galleryGrid'>
       
     </section>
   )
@@ -92,7 +94,9 @@ function Mainsection(){
 function App() {
   return (
     <div className="App">
-      <Navi />
+      <div id='navWrapper'>
+        <Navi />
+      </div>
 
       <IntroCard />
 
