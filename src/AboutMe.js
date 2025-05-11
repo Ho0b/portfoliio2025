@@ -4,7 +4,7 @@ import './App.css'
 
 function Description(){
     return(
-        <p>
+        <p className='txt_center'>
             I am a creatively driven person, I love making things that I like
             and if there is a game / software / tool that lets me be creative,
             I will learn what it is and do a project. I love the creative process
@@ -16,16 +16,10 @@ function Description(){
 
 function About(){
     return(
-        <main>
+        <section>
             <Description />
-        </main>
+        </section>
     )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('about'));
-root.render(
-  <React.StrictMode>
-    <About />
-  </React.StrictMode>
-);
-
+export default About

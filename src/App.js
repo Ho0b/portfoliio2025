@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+import logo from './nh.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 // const sections = 
 // [
@@ -10,20 +11,20 @@ import React, { useState, useEffect } from 'react';
 
 function IntroSection(){
   return(
-    <div>
-      <h2>
-        Hello, I'm Netra Hun
-      </h2>
-      <img src={logo} alt='Hero Icon'>
-      </img>
-      <p className='width-fit'>
-        I am a programming and design undergraduate, and 
-        my consentration is UI and UX development. I've created a lot of creative projects over the years.
-        Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
-        3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
-      </p>
-      <a href='about.html'>More About Me!</a>
-    </div>
+      <div className='gap_50px'>
+        <h2>
+          Hello, I'm Netra Hun
+        </h2>
+        <img src={logo} alt='Hero Icon' id='heroicon'>
+        </img>
+        <p className='width-fit'>
+          I am a programming and design undergraduate, and 
+          my consentration is UI and UX development. I've created a lot of creative projects over the years.
+          Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
+          3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
+        </p>
+        <Link to={"/about"}><button id='aboutMeButton'>More About Me!</button></Link>
+      </div>
   )
 }
 
@@ -58,9 +59,7 @@ function Navi(){
 
   return(
     <nav className={showNav}>
-      <h1>
-        <a href='index.html'>Netra Hun</a>
-      </h1>
+      <h1>Netra Hun</h1>
 
       <ul>
         <li>
