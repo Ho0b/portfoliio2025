@@ -1,5 +1,6 @@
-import logo from './assets/images/nh.svg';
+import logo from './nh.svg';
 import './App.css';
+import images from './images.json';
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 
@@ -8,7 +9,6 @@ import {Link} from "react-router-dom";
 //   {title: "Gallery", id: 1},
 //   {title: "Contact", id: 3},
 // ];
-
 
 function IntroSection(){
   return(
@@ -75,11 +75,26 @@ function Navi(){
 }
 
 function Gallery(){
+  var imageArray = images.images.map((img, index) => (
+    <img key={index} src={"/images/"+img.src} alt={'image'+index}/>
+  ))
 
   return(
-    <section id='galleryGrid'>
-      
+    <section>
+      <h2>Projects</h2>
+      <div id='gallery'>
+        {imageArray}
+      </div>
     </section>
+  )
+}
+
+function FooterSection(){
+  return(
+    <footer className='center_flex'>
+      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it</p>
+      <button className='aboutPage'>contact me</button>
+    </footer>
   )
 }
 
@@ -87,6 +102,8 @@ function Mainsection(){
   return (
     <main>
       <Gallery />
+
+      <FooterSection />
     </main>
   )
 }

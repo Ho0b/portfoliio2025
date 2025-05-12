@@ -118,7 +118,20 @@ section{
   align-items: center;
   background-color: var(--secColor);
   width: 100vw;
-  height: 1080px;
+  flex-direction: column;
+  height: fit-content;
+  min-height: 1080px;
+}
+
+footer{
+  background: 
+      linear-gradient(135deg,#0000 20.5%,#FFED65 0 29.5%,#0000 0) 0 15px,
+      linear-gradient( 45deg,#0000 8%,#FFED65 0 17%, #0000 0 58%) 30px 0,
+      linear-gradient(135deg,#0000 8%,#FFED65 0 17%, #0000 0 58%,#FFED65 0 67%,#0000 0),        
+      linear-gradient( 45deg,#0000 8%,#FFED65 0 17%, #0000 0 58%,#FFED65 0 67%,#0000 0 83%,#FFED65 0 92%,#0000 0),
+      #59FFA0;
+  background-size: 60px 60px;
+  min-height: 256px;
 }
 
 p{
@@ -146,6 +159,16 @@ Button{
     box-shadow: 5px 5px white;
   }
 }
+
+/* 
+ID - ID
+ID - ID
+ID - ID
+ID - ID
+ID - ID
+ID - ID
+*/
+
 
 #introCard{
   background: 
@@ -178,6 +201,20 @@ Button{
   width: 100vw;
 }
 
+#gallery{
+  margin: 120px 0 120px 0;
+  width: 95%;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  align-self: center;
+}
+#gallery > img{
+  width: 100%;
+  max-width: 768px;
+}
+
 /*
 CLASSES - CLASSES -
 CLASSES - CLASSES -
@@ -196,6 +233,14 @@ CLASSES - CLASSES -
 
 .aboutPage{
   background-color: var(--priColor);
+}
+
+.center_flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
 }
 
 .center_flex_black{
@@ -245,10 +290,6 @@ CLASSES - CLASSES -
   }
 }
 
- /* Extra small devices (phones, 600px and down) */
- @media only screen and (min-width: 768px) {
- }
-
  /* Small devices (portrait tablets and large phones, 600px and up)
  @media only screen and (min-width: 600px) {
 
@@ -256,12 +297,16 @@ CLASSES - CLASSES -
   */
  /* Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
-
+  #gallery{
+    grid-template-columns: repeat(2, 50%);
+  }
  }
  
  /* Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
-
+  #gallery{
+    grid-template-columns: repeat(3, 33%);
+  }
  }
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */

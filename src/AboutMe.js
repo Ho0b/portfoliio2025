@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Description(){
     return(
-        <div>
+        <div className='center_flex'>
             <p className='txt_center width-fit line_spacing'>
             I am a creatively driven person, I love making things that I like
             and if there is a game / software / tool that lets me be creative,
