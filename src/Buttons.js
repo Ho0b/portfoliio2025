@@ -2,6 +2,6 @@ import "./App.css"
 
 export function ContactMeButton(){
     return(
-        <button className='aboutPage'>contact me</button>
+        <button className='aboutPage'>Let's Connect!</button>
     )
 }

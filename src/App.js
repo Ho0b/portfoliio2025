@@ -1,6 +1,7 @@
 import logo from './nh.svg';
 import './App.css';
 import images from './images.json';
+import games from './games.json';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import {ContactMeButton} from './Buttons';
@@ -10,6 +11,8 @@ import {ContactMeButton} from './Buttons';
 //   {title: "Gallery", id: 1},
 //   {title: "Contact", id: 3},
 // ];
+
+var disabledSection = [true, false, false]
 
 function IntroSection(){
   return(
@@ -25,7 +28,7 @@ function IntroSection(){
           Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
           3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
         </p>
-        <Link to={"/about"}><button id='aboutMeButton'>More About Me!</button></Link>
+        <Link to={"/about"} onClick={disabledSection = [true, false, false]}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
   )
 }
@@ -89,12 +92,21 @@ function Gallery(){
   )
 }
 
-
 function Games(){
 
+  var gamesArray = games.FinishedGames.map((game, index) => (
+    <article key={index} className='gameSectionArticle'>
+      <video>
+
+      </video>
+      <h3>{game.gamename}</h3>
+      <h4>{game.genre}</h4>
+      <p>{game.description}</p>
+    </article>
+  ))
   return(
     <section>
-      <p>these are the games i've made</p>
+      {gamesArray}
     </section>
   )
 }
@@ -116,6 +128,9 @@ function FooterSection(){
   )
 }
 
+
+
+
 function Mainsection(){
 
   const [currentSection, setSection]= useState(<Games />)
@@ -124,9 +139,9 @@ function Mainsection(){
     <main>
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
-      <button className='primaryOpposite' onClick={() => setSection(<Games />)}>Games</button>
-      <button className='primaryOpposite' onClick={() => setSection(<Gallery />)}>3D Models</button>
-      <button className='primaryOpposite' onClick={() => setSection(<Logos />)}>Icons</button>
+      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection[0]=true, disabledSection[1]=false, disabledSection[2]=false)}>Games</button>
+      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection[1]=true, disabledSection[0]=false, disabledSection[2]=false)}>3D Models</button>
+      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection[2]=true, disabledSection[0]=false, disabledSection[1]=false)}>Icons</button>
       </div>
 
       <div>

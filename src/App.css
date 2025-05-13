@@ -32,6 +32,7 @@
 html{
   scrollbar-width: none;
   scroll-behavior: smooth;
+  background-color: var(--secColor);
 }
 
 main{
@@ -154,11 +155,20 @@ Button{
   min-width: 128px;
   max-width: fit-content;
   box-shadow: 0 0 black;
-  transition: filter .1s ease-in-out, box-shadow .3s ease-in-out;
+  transition: filter .1s ease-in-out, box-shadow .1s ease-in-out;
 
   &:hover{
     filter: invert();
     box-shadow: 5px 5px white;
+  }
+
+  &:disabled{
+    background-color: white;
+  }
+
+  &:disabled:hover{
+    box-shadow: none;
+    filter: none;
   }
 }
 
@@ -177,7 +187,8 @@ ID - ID
   width: 100%;
   align-self: center;
   justify-content: space-evenly;
-  max-width: 1080px;
+  max-width: 768px;
+  padding: 20px 0 20px 0;
 }
 
 #introCard{
@@ -233,7 +244,7 @@ ID - ID
 #projectsh2{
   background-color: var(--secColor);
   margin: 0;
-  padding: 50px;
+  padding: 20px;
 }
 
 /*
@@ -243,6 +254,16 @@ CLASSES - CLASSES -
 CLASSES - CLASSES -
 CLASSES - CLASSES -
 */
+
+.gameSectionArticle{
+  width: 90vw;
+  max-width: 768px;
+  
+}
+.gameSectionArticle > video{
+  background-color: var(--priColor);
+  width: 100%;
+}
 
 .primaryOpposite{
   background-color: var(--priColor);

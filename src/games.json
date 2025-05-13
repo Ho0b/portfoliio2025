@@ -1,0 +1,14 @@
+{
+    "FinishedGames": [
+        {
+        "gamename" : "Doofen Grove", 
+        "genre": "Simon Says",
+        "description": "Created in Unity, I wanted to make a simple dance game that was based on simon says because at the time, I thought it would be funny. It started with the idea of making a cowboy face off type game, but it changed into this dance simon says game with Phineas and Ferb characters because I also thought it be funny. I 3D modeled perry the platypus, and dr doof, looked up image references, and did some animations in Blender. I was not able to fix the animation positions but kept it the way it was it looked fun."
+        },
+        {
+        "gamename": "Not Duck Hunt",
+        "genre": "Arcade",
+        "description": "Created in Unity, I made this game with the intention to learn raycasting. I already knew how to get user input, object collisions, and needed a game to learn raycasting. I picked duck hunt as a inspiration because I had never done a 2D game in Unity before so I went with it and recreated the aspects that I could understand. I made the background and other sprites myself using Aesprite, and modeled a gun in Blender then rendered it out."
+        }
+    ]
+}
