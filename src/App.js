@@ -1,8 +1,9 @@
 import logo from './nh.svg';
 import './App.css';
 import images from './images.json';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
+import {ContactMeButton} from './Buttons';
 
 // const sections = 
 // [
@@ -81,10 +82,27 @@ function Gallery(){
 
   return(
     <section>
-      <h2>Projects</h2>
       <div id='gallery'>
         {imageArray}
       </div>
+    </section>
+  )
+}
+
+
+function Games(){
+
+  return(
+    <section>
+      <p>these are the games i've made</p>
+    </section>
+  )
+}
+function Logos(){
+
+  return(
+    <section>
+      <p>these is the logos i've made</p>
     </section>
   )
 }
@@ -93,16 +111,28 @@ function FooterSection(){
   return(
     <footer className='center_flex'>
       <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it</p>
-      <button className='aboutPage'>contact me</button>
+      <ContactMeButton/>
     </footer>
   )
 }
 
 function Mainsection(){
+
+  const [currentSection, setSection]= useState(<Games />)
+
   return (
     <main>
-      <Gallery />
+      <h2 id='projectsh2'>Projects</h2>
+      <div id='projectButtons'>
+      <button className='primaryOpposite' onClick={() => setSection(<Games />)}>Games</button>
+      <button className='primaryOpposite' onClick={() => setSection(<Gallery />)}>3D Models</button>
+      <button className='primaryOpposite' onClick={() => setSection(<Logos />)}>Icons</button>
+      </div>
 
+      <div>
+        {currentSection}
+      </div>
+    
       <FooterSection />
     </main>
   )
