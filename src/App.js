@@ -1,6 +1,6 @@
 import logo from './nh.svg';
 import './App.css';
-import images from './images.json';
+import media from './media.json';
 import games from './games.json';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
@@ -28,7 +28,7 @@ function IntroSection(){
           Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
           3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
         </p>
-        <Link to={"/about"} onClick={disabledSection = [true, false, false]}><button id='aboutMeButton'>More About Me!</button></Link>
+        <Link to={"/about"} onClick={() => (disabledSection = [true, false, false])}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
   )
 }
@@ -79,13 +79,13 @@ function Navi(){
 }
 
 function Gallery(){
-  var imageArray = images.images.map((img, index) => (
-    <img key={index} src={"/images/"+img.src} alt={'image'+index}/>
+  var imageArray = media.images.map((img, index) => (
+    <img key={index} src={"/images/"+img.src} alt={img.src.slice(0,-4)}/>
   ))
 
   return(
     <section>
-      <div id='gallery'>
+      <div className='gallery'>
         {imageArray}
       </div>
     </section>
@@ -96,8 +96,8 @@ function Games(){
 
   var gamesArray = games.FinishedGames.map((game, index) => (
     <article key={index} className='gameSectionArticle'>
-      <video>
-
+      <video controls={true} autoPlay={false} controlsList='nodownload noremoteplayback noplaybackrate'>
+        <source src={"/videos/"+game.videosrc} type='video/mp4'></source>
       </video>
       <h3>{game.gamename}</h3>
       <h4>{game.genre}</h4>
@@ -112,9 +112,15 @@ function Games(){
 }
 function Logos(){
 
+  var iconsArray = media.icons.map((img, index) => (
+    <img key={index} src={"/images/"+img.src} alt={img.src.slice(0,-4)}/>
+  ))
+
   return(
     <section>
-      <p>these is the logos i've made</p>
+      <div className='gallery'>
+        {iconsArray}
+      </div>
     </section>
   )
 }
@@ -122,7 +128,7 @@ function Logos(){
 function FooterSection(){
   return(
     <footer className='center_flex'>
-      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it</p>
+      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it, if you want to work on something</p>
       <ContactMeButton/>
     </footer>
   )
@@ -139,9 +145,9 @@ function Mainsection(){
     <main>
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
-      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection[0]=true, disabledSection[1]=false, disabledSection[2]=false)}>Games</button>
-      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection[1]=true, disabledSection[0]=false, disabledSection[2]=false)}>3D Models</button>
-      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection[2]=true, disabledSection[0]=false, disabledSection[1]=false)}>Icons</button>
+      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>Games</button>
+      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>3D Models</button>
+      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>Icons</button>
       </div>
 
       <div>

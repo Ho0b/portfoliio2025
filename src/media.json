@@ -12,6 +12,15 @@
         {"src": "mimic.png"},
         {"src": "ryanchild.png"},
         {"src": "ryansweats.png"},
-        {"src": "sandra.png"}
+        {"src": "sandra.png"},
+        {"src": "pizzarat.png"}
+    ],
+    "icons": [
+        {"src": "ryanpose.png"},
+        {"src": "sandrapose.png"},
+        {"src": "erinpose.png"},
+        {"src": "krabglass.png"},
+        {"src": "horsebite.png"}
+
     ]
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css'
 import { Link } from 'react-router-dom';
+import {ContactMeButton} from './Buttons';
+
 
 
 function Description(){
@@ -12,11 +14,10 @@ function Description(){
             I will learn what it is and do a project. I love the creative process because
             I love that feeling of making something come to life. Sometimes, what comes out is not great
             but as long as I am continuing to learn things, I am happy with that.
-            if you share that passion and or want to work something out. 
-            Feel free to <button className='aboutPage'>contact me</button>
+            if you share that passion and or want to work something out. <ContactMeButton/>
         </p>
 
-        <Link to={"/"}> <button className='aboutPage'>Home</button> </Link>
+        <Link to={"/"}><button className='aboutPage'>Home</button> </Link>
         </div>
     )
 }
