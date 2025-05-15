@@ -88,7 +88,6 @@ a{
   &:visited{
     color: var(--comColor);
   }
-  
 }
 ul li {
   text-decoration: none;
@@ -98,7 +97,7 @@ ul li {
   display: flex;
   align-content: center;
   justify-content: end;
-  width: 128px;
+  min-width: 128px;
 }
 ul li a{
   color: var(--comColor);
@@ -171,6 +170,47 @@ Button{
     filter: none;
   }
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  background: 
+		  linear-gradient(135deg,#0000 20.5%,#FFED65 0 29.5%,#0000 0) 0 10px,
+		  linear-gradient( 45deg,#0000 8%,#FFED65 0 17%, #0000 0 58%) 20px 0,
+		  linear-gradient(135deg,#0000 8%,#FFED65 0 17%, #0000 0 58%,#FFED65 0 67%,#0000 0),        
+		  linear-gradient( 45deg,#0000 8%,#FFED65 0 17%, #0000 0 58%,#FFED65 0 67%,#0000 0 83%,#FFED65 0 92%,#0000 0),
+		  #59FFA0;
+	background-size: 40px 40px;
+
+  width: fit-content;
+  max-width: 50vw;
+
+  border: 0px solid transparent;
+  border-radius: 1rem;
+
+  & input{
+    width: 50%;
+    border: none;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    border: none;
+    border-radius: 1rem;
+    padding-left: 10px;
+  }
+
+  & textarea{
+    width: 50%;
+    border: none;
+    padding: 0;
+  }
+
+}
+
 
 /* 
 ID - ID
@@ -290,6 +330,13 @@ CLASSES - CLASSES -
   justify-content: center;
   align-items: center;
   width: inherit;
+}
+
+.flex_col{
+  flex-direction: column;
+}
+.flex_row{
+  flex-direction: row;
 }
 
 .center_flex_black{

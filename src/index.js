@@ -6,6 +6,7 @@ import About from './AboutMe';
 import NotFoundPage from './NotFoundPage';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import ContactFormContainer from './Contact';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,9 @@ const router = createBrowserRouter([
   },
   {
     path:"/about", element: <About />
+  },
+  {
+    path:"/contact", element: <ContactFormContainer />
   },
   { path: "*", element: <NotFoundPage /> },
 ]);

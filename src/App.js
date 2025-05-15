@@ -68,9 +68,7 @@ function Navi(){
 
       <ul>
         <li>
-          <a href='mailto:business.netrahun@gmail.com' >
-            Contact
-          </a>
+          <ContactMeButton/>
         </li>
       </ul>
 
@@ -133,9 +131,6 @@ function FooterSection(){
     </footer>
   )
 }
-
-
-
 
 function Mainsection(){
 

@@ -1,8 +1,8 @@
 import "./App.css"
+import {Link} from "react-router-dom"
 
 export function ContactMeButton(){
     return(
-        <a href="mailto:business.netrahun@gmail.com"><button className='aboutPage'>Let's Connect!</button></a>
-        
+        <Link to={"/contact"}><button className='aboutPage'>Let's Connect!</button></Link>
     )
 }
