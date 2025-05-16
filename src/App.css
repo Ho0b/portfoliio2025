@@ -55,6 +55,7 @@ h1{
 
 nav{
   flex-direction: row;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   justify-content: space-between;
@@ -75,40 +76,11 @@ nav > h1{
   margin: auto 0 auto 0;
   font-size: var(--navTextSize);
 }
-nav > ul{
-  display: block;
-  align-content: center;
-  padding: 0;
-  margin: auto 0 auto 0
-  /* gap: 50px; */
-}
 a{
   text-decoration: none;
 
   &:visited{
     color: var(--comColor);
-  }
-}
-ul li {
-  text-decoration: none;
-  list-style: none;
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
-  display: flex;
-  align-content: center;
-  justify-content: end;
-  min-width: 128px;
-}
-ul li a{
-  color: var(--comColor);
-  font-size: var(--navTextSize);
-  font-weight: bold;
-  display: inline-block;
-  text-decoration: unset;
-
-  &:hover {
-    font-weight: 1000;
-    text-decoration: underline;
   }
 }
 
@@ -123,6 +95,7 @@ section{
   height: fit-content;
   min-height: 1080px;
   padding: 60px 0 60px 0;
+  gap: 1rem;
 }
 
 footer{
@@ -186,14 +159,19 @@ form{
 		  #59FFA0;
 	background-size: 40px 40px;
 
-  width: fit-content;
-  max-width: 50vw;
+  width: 90vw;
+  max-width: 768px;
 
   border: 0px solid transparent;
   border-radius: 1rem;
 
+  & div{
+    width: 100%;
+  }
+
   & input{
-    width: 50%;
+    width: 100%;
+    max-width: 768px;
     border: none;
     height: 2rem;
     font-size: 1rem;
@@ -204,9 +182,18 @@ form{
   }
 
   & textarea{
-    width: 50%;
+    width: 100%;
+    min-height: 256px;
+    max-width: 768px;
     border: none;
-    padding: 0;
+    padding-left: 10px;
+    font-size: 1rem;
+    font-weight: bolder;
+    border-radius: 1rem;
+  }
+
+  & label{
+    font-size: 1.2rem;
   }
 
 }
@@ -221,6 +208,51 @@ ID - ID
 ID - ID
 */
 
+.hamButton{
+  align-self: center;
+  min-width: 64px;
+  height: 64px;
+  max-width: none;
+  padding: 0;
+  aspect-ratio: 1/1;
+
+  background-image: url(../public/images/hamStatic.png);
+  
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+#hamburger{
+  display: none;
+}
+
+#hamburgerOpen{
+  display: block;
+  background: var(--secColor);
+  min-height: fit-content;
+  border: 2px solid black;
+  border-radius: 1rem;
+  position: absolute;
+  top: calc(72px + 1rem);
+  right: 1rem;
+  width: fit-content;
+  padding: 1rem;
+
+  & ul{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+  }
+  & ul > li{
+    list-style: none;
+  }
+
+}
 
 #projectButtons{
   display: flex;
@@ -260,10 +292,29 @@ ID - ID
 }
 
 #navWrapper{
+  display: flex;
   position: fixed;
   height: 72px;
   width: 100vw;
 }
+
+#projectsh2{
+  background-color: var(--secColor);
+  margin: 0;
+  padding: 20px;
+}
+
+#formSection{
+  justify-content: start;
+}
+
+/*
+CLASSES - CLASSES -
+CLASSES - CLASSES -
+CLASSES - CLASSES -
+CLASSES - CLASSES -
+CLASSES - CLASSES -
+*/
 
 .gallery{
   /* margin: 120px 0 120px 0; */
@@ -283,20 +334,6 @@ ID - ID
   margin: auto;
 
 }
-
-#projectsh2{
-  background-color: var(--secColor);
-  margin: 0;
-  padding: 20px;
-}
-
-/*
-CLASSES - CLASSES -
-CLASSES - CLASSES -
-CLASSES - CLASSES -
-CLASSES - CLASSES -
-CLASSES - CLASSES -
-*/
 
 .gameSectionArticle{
   width: 90vw;
@@ -338,6 +375,15 @@ CLASSES - CLASSES -
 .flex_row{
   flex-direction: row;
 }
+.flex_alignself_left{
+  align-self: flex-start;
+}
+.flex_alignself_right{
+  align-self: flex-end;
+}
+.flex_alignself_center{
+  align-self: center;
+}
 
 .center_flex_black{
   background-color: var(--secColor);
@@ -377,6 +423,15 @@ CLASSES - CLASSES -
   max-width: 768px;
 }
 
+.showHam{
+  background-image: url(../public/images/hamC.gif);
+}
+
+.hideHam{
+  background-image: url(../public/images/hamO.gif);
+}
+
+
 @keyframes hideNavAni {
   from{
     opacity: 1;
@@ -407,6 +462,9 @@ CLASSES - CLASSES -
   }
   #projectButtons{
     flex-direction: row;
+  }
+  .hamButton{
+    display: none;
   }
  }
  

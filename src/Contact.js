@@ -3,8 +3,6 @@ import './App.css'
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
 
-
-
 function ContactForm(){
     const formRef = React.useRef()
 
@@ -15,12 +13,12 @@ function ContactForm(){
             'service_sn2bc8o',
             'template_vcnqjm6',
             formRef.current,
-            process.env.FORM_API_KEY.toString()
+            process.env.REACT_APP_FORM_API_KEY.toString()
         ).then(
-            (result) => {
-                console.log('form was submitted', result.text)
-            }, (error) => {
-                console.log('there was an error', error.text)
+            () => {
+                alert("Your message has been sent, I'll get to you soon")
+            }, () => {
+                alert("There was an error in your message. Please look over it again")
             }
         )
     }
@@ -28,8 +26,14 @@ function ContactForm(){
     return(
         <div className='center_flex'>
             <form ref={formRef} onSubmit={sendEmail}>
-                <input type="text" name="user_name" placeholder="Your Name" required />
-                <input type="email" name="user_email" placeholder="Your Email" required />
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="John Doe" required />
+                </div>
+                <div>
+                    <label>Your Email</label>
+                    <input type="email" name="email" placeholder="e.g name@domain.com" required />
+                </div>
                 <textarea name="message" placeholder="Your Message" required />
                 <button type="submit">Send</button>
             </form>
@@ -37,11 +41,20 @@ function ContactForm(){
     )
 }
 
+// function ShowAlert(){
+//     return(
+//         <dialog>
+
+//         </dialog>
+//     )
+// }
+
 function ContactFormContainer(){
     return(
-        <section>
-            <ContactForm />
+        <section id='formSection'>
             <Link to={"/"}><button className='primaryOpposite'>Home</button></Link>
+            <ContactForm />
+            
         </section>
     )
 }

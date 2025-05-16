@@ -1,7 +1,7 @@
 {
   "name": "portfoliio2025",
   "version": "0.1.0",
-  "homepage": "https://Ho0b.github.io/",
+  "homepage": "https://ho0b.github.io/portfoliio2025/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

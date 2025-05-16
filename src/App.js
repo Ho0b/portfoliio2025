@@ -4,7 +4,7 @@ import media from './media.json';
 import games from './games.json';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import {ContactMeButton} from './Buttons';
+import {ContactMeButton , AboutMeButton} from './Buttons';
 
 // const sections = 
 // [
@@ -12,7 +12,13 @@ import {ContactMeButton} from './Buttons';
 //   {title: "Contact", id: 3},
 // ];
 
+
+
 var disabledSection = [true, false, false]
+
+export function setDisableSections(){
+  disabledSection = [true, false, false]
+}
 
 function IntroSection(){
   return(
@@ -23,10 +29,7 @@ function IntroSection(){
         <img src={logo} alt='Hero Icon' id='heroicon'>
         </img>
         <p className='width-fit'>
-          I am a programming and design undergraduate, and 
-          my consentration is UI and UX development. I've created a lot of creative projects over the years.
-          Ranging from games - using Unity / C#, logos, videos, music, short films, animations and 
-          3D models - using Blender, and I coded this website, using HTML, CSS, JS / React.
+          I program and design things. Below are my projects that i've done, I am good with Web technologies and Design tools.
         </p>
         <Link to={"/about"} onClick={() => (disabledSection = [true, false, false])}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
@@ -41,13 +44,39 @@ function IntroCard(){
   )
 }
 
+function NavContent(){
+  return(
+    <ul>
+        <li>
+          <AboutMeButton/>
+        </li>
+        <li>
+          <ContactMeButton/>
+        </li>
+    </ul>
+  )
+}
+
 function Navi(){
+  
+  const [showHam, setShowHam] = useState("");
+  const [showHamNav, setShowHamNav] = useState("hamburger");
   const [showNav, setShowNav] = useState("hiddenNav");
 
-  useEffect(() => {
+  function showContents(){
+    setShowHam("showHam")
+    setShowHamNav("hamburgerOpen")
+  }
+  function hideContents(){
+    setShowHam("hideHam")
+    setShowHamNav("hamburger")
+  }
+
+    useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 100) {
         setShowNav("hiddenNav");
+        hideContents()
       } else {
         setShowNav("showNav");
       }
@@ -63,22 +92,21 @@ function Navi(){
   }, []);
 
   return(
+    
     <nav className={showNav}>
-      <h1>Netra Hun</h1>
-
-      <ul>
-        <li>
-          <ContactMeButton/>
-        </li>
-      </ul>
-
+    <h1>Netra Hun</h1>
+    <button className={'hamButton ' + showHam} onClick={()=>{(showHam === "hideHam") ? showContents() : hideContents()}}></button>
+    <div id={showHamNav}>
+        <NavContent/>
+    </div>
     </nav>
+    
   )
 }
 
 function Gallery(){
   var imageArray = media.images.map((img, index) => (
-    <img key={index} src={"/images/"+img.src} alt={img.src.slice(0,-4)}/>
+    <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
   ))
 
   return(
@@ -95,11 +123,11 @@ function Games(){
   var gamesArray = games.FinishedGames.map((game, index) => (
     <article key={index} className='gameSectionArticle'>
       <video controls={true} autoPlay={false} controlsList='nodownload noremoteplayback noplaybackrate'>
-        <source src={"/videos/"+game.videosrc} type='video/mp4'></source>
+        <source src={"portfoliio2025/videos/"+game.videosrc} type='video/mp4'></source>
       </video>
-      <h3>{game.gamename}</h3>
-      <h4>{game.genre}</h4>
-      <p>{game.description}</p>
+      <h3 aria-label='game name'>{game.gamename}</h3>
+      <h4 aria-label='genre'>{game.genre}</h4>
+      <p aria-label='game description'>{game.description}</p>
     </article>
   ))
   return(
@@ -111,7 +139,7 @@ function Games(){
 function Logos(){
 
   var iconsArray = media.icons.map((img, index) => (
-    <img key={index} src={"/images/"+img.src} alt={img.src.slice(0,-4)}/>
+    <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
   ))
 
   return(

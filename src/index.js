@@ -19,7 +19,11 @@ const router = createBrowserRouter([
     path:"/contact", element: <ContactFormContainer />
   },
   { path: "*", element: <NotFoundPage /> },
-]);
+],
+{
+  basename:"/portfoliio2025"
+}
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
