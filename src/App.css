@@ -10,6 +10,8 @@
   --secColor: #59FFA0;
   --accColor: #FDFFF7;
   --comColor: black;
+
+  --navHeight: 52px;
 }
 
 .App {
@@ -53,6 +55,13 @@ h1{
   font-size: 1rem;
 }
 
+#navWrapper{
+  display: flex;
+  position: fixed;
+  height: var(--navHeight);
+  width: 100vw;
+}
+
 nav{
   flex-direction: row;
   width: 100%;
@@ -60,7 +69,6 @@ nav{
   padding-right: 10px;
   justify-content: space-between;
   align-content: center;
-  height: 72px;
   background-color: var(--secColor);
   position: sticky;
   top: 0;
@@ -89,7 +97,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secColor);
+  background: linear-gradient(to bottom, var(--secColor), var(--priColor));
   width: 100vw;
   flex-direction: column;
   height: fit-content;
@@ -210,12 +218,11 @@ ID - ID
 
 .hamButton{
   align-self: center;
-  min-width: 64px;
-  height: 64px;
+  min-width: calc(var(--navHeight) - 8px) ;
   max-width: none;
   padding: 0;
   aspect-ratio: 1/1;
-
+  background-size: contain;
   background-image: url(../public/images/hamStatic.png);
   
   &:hover{
@@ -234,10 +241,12 @@ ID - ID
   border: 2px solid black;
   border-radius: 1rem;
   position: absolute;
-  top: calc(72px + 1rem);
+  top: calc(var(--navHeight) + 1rem);
   right: 1rem;
   width: fit-content;
   padding: 1rem;
+
+  
 
   & ul{
     height: 100%;
@@ -252,6 +261,13 @@ ID - ID
     list-style: none;
   }
 
+}
+
+#bigNav{
+  display: none;
+  & ul{
+    list-style: none;
+  }
 }
 
 #projectButtons{
@@ -291,12 +307,7 @@ ID - ID
   font-weight: bolder;
 }
 
-#navWrapper{
-  display: flex;
-  position: fixed;
-  height: 72px;
-  width: 100vw;
-}
+
 
 #projectsh2{
   background-color: var(--secColor);
@@ -465,6 +476,17 @@ CLASSES - CLASSES -
   }
   .hamButton{
     display: none;
+  }
+  #bigNav{
+    display: block;
+    align-self: center;
+
+    & ul {
+      padding: 0;
+      display: flex;
+      margin: 0;
+      gap: 1rem;
+    }
   }
  }
  

@@ -99,6 +99,10 @@ function Navi(){
     <div id={showHamNav}>
         <NavContent/>
     </div>
+
+    <div id='bigNav'>
+        <NavContent/>
+      </div>
     </nav>
     
   )
