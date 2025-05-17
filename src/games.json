@@ -21,7 +21,7 @@
         {
             "gamename": "Bad pong",
             "genre": "3D Pong",
-            "description": "I made this game because I wanted to make my own pong game. The assignment was to figure out how to use Unity's global physics materials, so I made a physics material to the ball with a high level of bounce, and then applied it to the ball. I added a vector force when the player hits the ball, and then added a bot that hits it back with a random direction so there was a challenge.",
+            "description": "I made this game because I wanted to make my own pong game. The assignment was to figure out how to use Unity's global physics materials, so I made a physics material with a high level of bounce, and then applied it to the ball. I added a vector force when the player hits the ball, and then added a bot that hits it back with a random direction so there was a challenge.",
             "videosrc": "badpong.mp4"
         },
         {

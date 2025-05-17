@@ -5,6 +5,7 @@ import games from './games.json';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import {ContactMeButton , AboutMeButton} from './Buttons';
+import {SocialsContent} from './Socials';
 
 // const sections = 
 // [
@@ -29,8 +30,11 @@ function IntroSection(){
         <img src={logo} alt='Hero Icon' id='heroicon'>
         </img>
         <p className='width-fit'>
-          I program and design things. Below are my projects that i've done, I am good with Web technologies and Design tools.
+          I program and design things. Below are the projects that i've done, each one showcases my ability to program as well as design.
         </p>
+        <div>
+          <SocialsContent/>
+        </div>
         <Link to={"/about"} onClick={() => (disabledSection = [true, false, false])}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
   )
@@ -89,7 +93,7 @@ function Navi(){
 
     // Clean up event listener on unmount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    }, []);
 
   return(
     
@@ -155,11 +159,13 @@ function Logos(){
   )
 }
 
-function FooterSection(){
+export function FooterSection(){
   return(
     <footer className='center_flex'>
-      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it, if you want to work on something</p>
+      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it, if you want to work on something together</p>
       <ContactMeButton/>
+
+      <SocialsContent/>
     </footer>
   )
 }
@@ -173,7 +179,7 @@ function Mainsection(){
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
       <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>Games</button>
-      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>3D Models</button>
+      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>3D</button>
       <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>Icons</button>
       </div>
 

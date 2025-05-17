@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 import { Link } from 'react-router-dom';
 import {ContactMeButton} from './Buttons';
+import { FooterSection } from './App';
 
 
 
@@ -24,9 +25,13 @@ function Description(){
 
 function About(){
     return(
-        <section>
+        <main>
+            <section>
             <Description />
-        </section>
+            </section>
+            <FooterSection/>
+        </main>
+        
     )
 }
 

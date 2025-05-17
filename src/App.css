@@ -101,7 +101,7 @@ section{
   width: 100vw;
   flex-direction: column;
   height: fit-content;
-  min-height: 1080px;
+  min-height: fit-content;
   padding: 60px 0 60px 0;
   gap: 1rem;
 }
@@ -192,7 +192,7 @@ form{
   & textarea{
     width: 100%;
     min-height: 256px;
-    max-width: 768px;
+    max-width: 95%;
     border: none;
     padding-left: 10px;
     font-size: 1rem;
@@ -440,6 +440,21 @@ CLASSES - CLASSES -
 
 .hideHam{
   background-image: url(../public/images/hamO.gif);
+}
+
+.socialList{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+
+  & li a img{
+    height: var(--navHeight);
+  }
+
 }
 
 

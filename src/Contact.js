@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
+import { FooterSection } from './App';
 
 function ContactForm(){
     const formRef = React.useRef()
@@ -51,11 +52,16 @@ function ContactForm(){
 
 function ContactFormContainer(){
     return(
-        <section id='formSection'>
+        <main>
+            <section id='formSection'>
             <Link to={"/"}><button className='primaryOpposite'>Home</button></Link>
             <ContactForm />
             
-        </section>
+            </section>
+
+            <FooterSection/>
+        </main>
+        
     )
 }
 

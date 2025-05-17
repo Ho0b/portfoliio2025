@@ -1,0 +1,7 @@
+{ "sites":
+    [ 
+        {"url":"https://www.youtube.com/@netrahun", "iconname":"youtube.png"},
+        {"url":"https://www.instagram.com/netra.hun/", "iconname":"instagram.png"},
+        {"url":"https://www.youtube.com/@netrahun", "iconname":"linkedin.png"}
+    ]
+}
