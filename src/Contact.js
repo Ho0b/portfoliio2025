@@ -32,11 +32,14 @@ function ContactForm(){
                     <input type="text" name="name" placeholder="John Doe" required />
                 </div>
                 <div>
-                    <label>Your Email</label>
+                    <label>Email</label>
                     <input type="email" name="email" placeholder="e.g name@domain.com" required />
                 </div>
-                <textarea name="message" placeholder="Your Message" required />
-                <button type="submit">Send</button>
+                <div>
+                    <label>Message</label>
+                    <textarea name="message" required />
+                </div>
+                <button type="submit" id='submitButton'>Send</button>
             </form>
         </div>
     )
@@ -58,8 +61,6 @@ function ContactFormContainer(){
             <ContactForm />
             
             </section>
-
-            <FooterSection/>
         </main>
         
     )
