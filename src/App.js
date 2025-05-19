@@ -114,7 +114,7 @@ function Navi(){
 
 function Gallery(){
   var imageArray = media.images.map((img, index) => (
-    <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
+    <img key={index} src={"images/"+img.src} alt={img.src.slice(0,-4)}/>
   ))
 
   return(
@@ -131,7 +131,7 @@ function Games(){
   var gamesArray = games.FinishedGames.map((game, index) => (
     <article key={index} className='gameSectionArticle'>
       <video controls={true} autoPlay={false} controlsList='nodownload noremoteplayback noplaybackrate'>
-        <source src={"portfoliio2025/videos/"+game.videosrc} type='video/mp4'></source>
+        <source src={"videos/"+game.videosrc} type='video/mp4'></source>
       </video>
       <h3 aria-label='game name'>{game.gamename}</h3>
       <h4 aria-label='genre'>{game.genre}</h4>
@@ -146,14 +146,14 @@ function Games(){
 }
 function Logos(){
 
-  var iconsArray = media.icons.map((img, index) => (
-    <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
-  ))
+  // var iconsArray = media.icons.map((img, index) => (
+  //   <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
+  // ))
 
   return(
     <section>
-      <div className='gallery'>
-        {iconsArray}
+      <div className='shortfilmGallery'>
+          <iframe src="https://www.youtube.com/embed/LZpCD_3fKCw?si=EU_FN0c6p7r8vwCq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
   )
@@ -178,9 +178,9 @@ function Mainsection(){
     <main>
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
-      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>Games</button>
-      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>3D</button>
-      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>Icons</button>
+      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>🕹 Games</button>
+      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>📦 3D</button>
+      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>🎞 Short Films</button>
       </div>
 
       <div>

@@ -360,8 +360,22 @@ CLASSES - CLASSES -
   border-radius: 1rem;
   border: none;
   margin: auto;
-
 }
+
+.shortfilmGallery{
+  width: 95%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  & iframe{
+    aspect-ratio: 16/9;
+  }
+}
+
+
 
 .gameSectionArticle{
   width: 90vw;
@@ -385,8 +399,12 @@ CLASSES - CLASSES -
   line-height: auto;
 }
 
-.aboutPage{
+.priCol{
   background-color: var(--priColor);
+}
+
+.secCol{
+  background-color: var(--secColor);
 }
 
 .center_flex{
