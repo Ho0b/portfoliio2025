@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   { path: "*", element: <NotFoundPage /> },
 ],
 {
-  basename:"/portfoliio2025"
+  basename:"/"
 }
 );
 

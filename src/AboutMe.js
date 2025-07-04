@@ -32,7 +32,7 @@ function Description(){
             <ContactMeButton/>
             </p>
 
-        <Link to={"/"}><button className='secCol'>Home</button> </Link>
+        <Link to={"/"}><button >Home</button> </Link>
         </div>
     )
 }

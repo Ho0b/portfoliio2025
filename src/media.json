@@ -1,19 +1,19 @@
 {
     "images": [
-        {"src": "beachcar.png"},
-        {"src": "cabin.png"},
-        {"src": "candyhouse.jpg"},
-        {"src": "christmas2024.jpg"},
-        {"src": "erin.png"},
-        {"src": "frog.png"},
-        {"src": "fungo.jpg"},
-        {"src": "jackskeleton.jpg"},
-        {"src": "luffyboat.png"},
-        {"src": "mimic.png"},
-        {"src": "ryanchild.png"},
-        {"src": "ryansweats.png"},
-        {"src": "sandra.png"},
-        {"src": "pizzarat.png"}
+        {"src": "beachcar.png", "caption": "a low geometry Jeep"},
+        {"src": "cabin.png", "caption": "a low geometry cabin in the woods, with fireflies and campfire"},
+        {"src": "candyhouse.jpg", "caption": "a gingerbread house"},
+        {"src": "christmas2024.jpg", "caption": "a small room decorated with a christmas tree, stocking, presents"},
+        {"src": "erin.png", "caption": "one of my sister characters from my short film named Erin"},
+        {"src": "frog.png", "caption": "a big frog character"},
+        {"src": "fungo.jpg", "caption": "a mushroom character remake from the game Dragon Quest Monster series"},
+        {"src": "jackskeleton.jpg", "caption": "a scene depicting jack the skeleton going into someones room"},
+        {"src": "luffyboat.png", "caption": "a pirate ship inspired by the animation series One Piece"},
+        {"src": "mimic.png", "caption": "a evil chest (mimic) character based on classic fantasy myths"},
+        {"src": "ryanchild.png", "caption": "the younger version of my main character from my short film"},
+        {"src": "ryansweats.png", "caption":"the main character of my short film, Ryan"},
+        {"src": "sandra.png", "caption": "the second sister from my short film named Sandra"},
+        {"src": "pizzarat.png", "caption": "a rat that is wearing a pizza as a suit"}
     ],
     "icons": [
         {"src": "ryanpose.png"},

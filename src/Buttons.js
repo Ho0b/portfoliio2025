@@ -4,13 +4,13 @@ import { setDisableSections } from "./App"
 
 export function ContactMeButton(){
     return(
-        <Link to={"/contact"}><button className='priCol' onClick={()=>(setDisableSections)}>Let's Connect!</button></Link>
+        <Link to={"/contact"}><button onClick={()=>(setDisableSections)}>Let's Connect!</button></Link>
     )
 }
 
 export function AboutMeButton(){
     return(
-        <Link to={"/about"}><button className='priCol' onClick={()=>(setDisableSections)}>About</button></Link>
+        <Link to={"/about"}><button onClick={()=>(setDisableSections)}>About</button></Link>
     )
 }
 

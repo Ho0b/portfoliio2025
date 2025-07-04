@@ -25,13 +25,10 @@ function IntroSection(){
   return(
       <div className='gap_50px'>
         <h2>
-          Hello, I'm Netra Hun
+          Netra Hun | Programmer and Designer
         </h2>
         <img src={logo} alt='Hero Icon' id='heroicon'>
         </img>
-        <p className='width-fit'>
-          I program and design things. Below are the projects that i've done, each one showcases my ability to program as well as design.
-        </p>
         <div>
           <SocialsContent/>
         </div>
@@ -113,9 +110,15 @@ function Navi(){
 }
 
 function Gallery(){
-  var imageArray = media.images.map((img, index) => (
-    <img key={index} src={"images/"+img.src} alt={img.src.slice(0,-4)}/>
-  ))
+  var imageArray = media.images.map((img, index) => 
+    (
+      <figure>
+        <img key={index} src={"images/"+img.src} alt={img.caption}/>
+        <figcaption>{img.caption}</figcaption>
+      </figure>
+    
+    )
+  )
 
   return(
     <section>
@@ -178,9 +181,9 @@ function Mainsection(){
     <main>
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
-      <button className='primaryOpposite' disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>🕹 Games</button>
-      <button className='primaryOpposite' disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>📦 3D</button>
-      <button className='primaryOpposite' disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>🎞 Short Films</button>
+      <button disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>🕹 Games</button>
+      <button disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>📦 3D</button>
+      <button disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>🎞 Short Films</button>
       </div>
 
       <div>

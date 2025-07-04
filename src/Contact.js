@@ -57,7 +57,7 @@ function ContactFormContainer(){
     return(
         <main>
             <section id='formSection'>
-            <Link to={"/"}><button className='primaryOpposite'>Home</button></Link>
+            <Link to={"/"}><button >Home</button></Link>
             <ContactForm />
             
             </section>
