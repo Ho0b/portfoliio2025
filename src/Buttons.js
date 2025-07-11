@@ -1,16 +1,30 @@
 import "./App.css"
 import {Link} from "react-router-dom"
-import { setDisableSections } from "./App"
 
 export function ContactMeButton(){
     return(
-        <Link to={"/contact"}><button onClick={()=>(setDisableSections)}>Let's Connect!</button></Link>
+        <Link to={"/contact"}><button>Let's Connect!</button></Link>
     )
 }
 
 export function AboutMeButton(){
     return(
-        <Link to={"/about"}><button onClick={()=>(setDisableSections)}>About</button></Link>
+        <Link to={"/about"}><button>About</button></Link>
     )
 }
 
+export function BackArrow(){
+    return (
+        <div id="backArrowContainer">
+            <Link to={"/"} id="leftBackArrow">
+        </Link>
+        </div>
+        
+    )
+}
+
+export function HomeButton(){
+    return(
+        <Link to={"/"}><button>Home</button></Link>
+    )
+}

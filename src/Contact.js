@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css'
-import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
-import { FooterSection } from './App';
+import { BackArrow } from './Buttons';
 
 function ContactForm(){
     const formRef = React.useRef()
@@ -25,41 +24,33 @@ function ContactForm(){
     }
 
     return(
-        <div className='center_flex'>
-            <form ref={formRef} onSubmit={sendEmail}>
-                <div>
-                    <label>Full Name</label>
-                    <input type="text" name="name" placeholder="John Doe" required />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="e.g name@domain.com" required />
-                </div>
-                <div>
-                    <label>Message</label>
-                    <textarea name="message" required />
-                </div>
-                <button type="submit" id='submitButton'>Send</button>
-            </form>
-        </div>
+        <form ref={formRef} onSubmit={sendEmail}>
+            <div>
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="e.g name@domain.com" required />
+            </div>
+            <div>
+                <label>Message</label>
+                <textarea name="message" required />
+            </div>
+            <button type="submit" id='submitButton'>Send</button>
+        </form>
     )
 }
 
-// function ShowAlert(){
-//     return(
-//         <dialog>
-
-//         </dialog>
-//     )
-// }
-
 function ContactFormContainer(){
+
+    window.scrollTo(0,0)
     return(
         <main>
             <section id='formSection'>
-            <Link to={"/"}><button >Home</button></Link>
-            <ContactForm />
+            <BackArrow />
             
+            <ContactForm />
             </section>
         </main>
         

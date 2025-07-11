@@ -7,6 +7,7 @@ import NotFoundPage from './NotFoundPage';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ContactFormContainer from './Contact';
+import DragonQuestIndex from './projects/webprojects/dqindex';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,9 @@ const router = createBrowserRouter([
   },
   {
     path:"/contact", element: <ContactFormContainer />
+  },
+  {
+    path:"/projects/dqindex", element: <DragonQuestIndex />
   },
   { path: "*", element: <NotFoundPage /> },
 ],

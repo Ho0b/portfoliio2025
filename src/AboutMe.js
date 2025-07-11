@@ -38,6 +38,7 @@ function Description(){
 }
 
 function About(){
+    window.scroll(0,0)
     return(
         <main>
             <section id='aboutSection'>

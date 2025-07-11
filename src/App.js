@@ -4,7 +4,7 @@ import media from './media.json';
 import games from './games.json';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import {ContactMeButton , AboutMeButton} from './Buttons';
+import {ContactMeButton , AboutMeButton, HomeButton} from './Buttons';
 import {SocialsContent} from './Socials';
 
 // const sections = 
@@ -13,15 +13,7 @@ import {SocialsContent} from './Socials';
 //   {title: "Contact", id: 3},
 // ];
 
-
-
-var disabledSection = [true, false, false]
-
-export function setDisableSections(){
-  disabledSection = [true, false, false]
-}
-
-function IntroSection(){
+function IntroSection({changeActiveButton}){
   return(
       <div className='gap_50px'>
         <h2>
@@ -32,7 +24,7 @@ function IntroSection(){
         <div>
           <SocialsContent/>
         </div>
-        <Link to={"/about"} onClick={() => (disabledSection = [true, false, false])}><button id='aboutMeButton'>More About Me!</button></Link>
+        <Link to={"/about"} onClick={() => {changeActiveButton(0)}}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
   )
 }
@@ -45,9 +37,12 @@ function IntroCard(){
   )
 }
 
-function NavContent(){
+export function NavContent(){
   return(
     <ul>
+        <li>
+          <HomeButton/>
+        </li>
         <li>
           <AboutMeButton/>
         </li>
@@ -58,7 +53,7 @@ function NavContent(){
   )
 }
 
-function Navi(){
+export function Navi(){
   
   const [showHam, setShowHam] = useState("");
   const [showHamNav, setShowHamNav] = useState("hamburger");
@@ -75,7 +70,7 @@ function Navi(){
 
     useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < 100) {
+      if (window.scrollY < 48) {
         setShowNav("hiddenNav");
         hideContents()
       } else {
@@ -96,7 +91,7 @@ function Navi(){
     
     <nav className={showNav}>
     <h1>Netra Hun</h1>
-    <button className={'hamButton ' + showHam} onClick={()=>{(showHam === "hideHam") ? showContents() : hideContents()}}></button>
+    <button aria-label='hamburger menu button' className={'hamButton ' + showHam} onClick={()=>{(showHam === "hideHam") ? showContents() : hideContents()}}></button>
     <div id={showHamNav}>
         <NavContent/>
     </div>
@@ -109,10 +104,19 @@ function Navi(){
   )
 }
 
+export function NavBar(){
+  return(
+    <div id='navWrapper'>
+        <Navi />
+      </div>
+  )
+}
+
+
 function Gallery(){
   var imageArray = media.images.map((img, index) => 
     (
-      <figure>
+      <figure key={index}>
         <img key={index} src={"images/"+img.src} alt={img.caption}/>
         <figcaption>{img.caption}</figcaption>
       </figure>
@@ -147,7 +151,7 @@ function Games(){
     </section>
   )
 }
-function Logos(){
+function Films(){
 
   // var iconsArray = media.icons.map((img, index) => (
   //   <img key={index} src={"portfoliio2025/images/"+img.src} alt={img.src.slice(0,-4)}/>
@@ -162,28 +166,65 @@ function Logos(){
   )
 }
 
-export function FooterSection(){
+function Websites(){
   return(
-    <footer className='center_flex'>
-      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it, if you want to work on something together</p>
-      <ContactMeButton/>
-
-      <SocialsContent/>
-    </footer>
+    <section>
+      <Link id='websiteCard' to={"/projects/dqindex"}>
+        <article>
+          <h1>Dragon Quest Index</h1>
+          <figure>
+            <img src='images/dqindex.png' alt='dragon quest index site screenshot' width={360}></img>
+            <figcaption>Character wiki for the game Dragon Quest Monster Joker</figcaption>
+          </figure>
+          <aside id='featuredTechnologies'>
+            <h2>
+              Technologies
+            </h2>
+            <div className='flexEvenRow'>
+              <figure>
+                <img className='technologiesIcons' src='images/viteIcon.png' alt='vite icon'></img>
+                <figcaption>Vite App</figcaption>
+              </figure>
+              <figure>
+                <img className='technologiesIcons' src='images/reactIcon.png' alt='react icon'></img>
+                <figcaption>React.js</figcaption>
+              </figure> 
+              <figure>
+                <img className='technologiesIcons' src='images/gitIcon.png' alt='git icon'></img>
+                <figcaption>Git</figcaption>
+              </figure>
+              <figure>
+                <img className='technologiesIcons' src='images/adobeIcon.png' alt='adobe icon'></img>
+                <figcaption>Adobe Suite</figcaption>
+              </figure>
+            </div>
+          </aside>
+        </article>
+      </Link>
+        
+    </section>
   )
 }
 
-function Mainsection(){
+/*
 
-  const [currentSection, setSection]= useState(<Games />)
+  card component
+
+*/
+
+
+function Mainsection({getActiveButton ,changeActiveButton}){
+
+  const [currentSection, setSection]= useState(<Websites/>)
 
   return (
     <main>
       <h2 id='projectsh2'>Projects</h2>
       <div id='projectButtons'>
-      <button disabled={disabledSection[0]} onClick={ () => (setSection(<Games />), disabledSection=[true, false, false])}>🕹 Games</button>
-      <button disabled={disabledSection[1]} onClick={() => (setSection(<Gallery />), disabledSection=[false, true, false])}>📦 3D</button>
-      <button disabled={disabledSection[2]} onClick={() => (setSection(<Logos />), disabledSection=[false, false, true])}>🎞 Short Films</button>
+      <button disabled={getActiveButton===0} onClick={()=>{setSection(<Websites/>); changeActiveButton(0)} }>💻 Websites</button>
+      <button disabled={getActiveButton===1} onClick={()=>{setSection(<Games/>); changeActiveButton(1)} }>🕹 Games</button>
+      <button disabled={getActiveButton===2} onClick={()=>{setSection(<Gallery/>); changeActiveButton(2)} }>📦 3D</button>
+      <button disabled={getActiveButton===3} onClick={()=>{setSection(<Films/>); changeActiveButton(3)} }>🎞 Short Films</button>
       </div>
 
       <div>
@@ -195,16 +236,27 @@ function Mainsection(){
   )
 }
 
+export function FooterSection(){
+  return(
+    <footer className='center_flex'>
+      <p className='txt_center width-fit'>Thank you for visiting my site, I hope you liked it, if you want to work on something together</p>
+      <ContactMeButton/>
+
+      <SocialsContent/>
+    </footer>
+  )
+}
+
 function App() {
+  const [activeProjectButton, setActiveProjectButton] = useState(0)
+  window.scroll(0,0)
   return (
     <div className="App">
-      <div id='navWrapper'>
-        <Navi />
-      </div>
+      <NavBar/>
 
-      <IntroCard />
+      <IntroCard changeActiveButton={setActiveProjectButton}/>
 
-      <Mainsection />
+      <Mainsection getActiveButton={activeProjectButton} changeActiveButton={setActiveProjectButton}/>
     </div>
   );
 }
