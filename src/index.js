@@ -22,7 +22,8 @@ const router = createBrowserRouter([
   {
     path:"/projects/dqindex", element: <DragonQuestIndex />
   },
-  { path: "*", element: <NotFoundPage /> },
+  { path: "*", element: <NotFoundPage /> 
+  },
 ],
 {
   basename:"/"

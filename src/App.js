@@ -13,7 +13,7 @@ import {SocialsContent} from './Socials';
 //   {title: "Contact", id: 3},
 // ];
 
-function IntroSection({changeActiveButton}){
+function IntroSection(){
   return(
       <div className='gap_50px'>
         <h2>
@@ -24,7 +24,7 @@ function IntroSection({changeActiveButton}){
         <div>
           <SocialsContent/>
         </div>
-        <Link to={"/about"} onClick={() => {changeActiveButton(0)}}><button id='aboutMeButton'>More About Me!</button></Link>
+        <Link to={"/about"}><button id='aboutMeButton'>More About Me!</button></Link>
       </div>
   )
 }
@@ -249,7 +249,6 @@ export function FooterSection(){
 
 function App() {
   const [activeProjectButton, setActiveProjectButton] = useState(0)
-  window.scroll(0,0)
   return (
     <div className="App">
       <NavBar/>
